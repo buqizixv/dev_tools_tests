@@ -1,11 +1,13 @@
+from libtestingtools.spam.db import Session
+from libtestingtools.spam.email_sender import Sender
 
 
 class SpamSender:
-    def __init__(self, session, sender):
-        SpamSender.session = session
-        SpamSender.sender = sender
+    def __init__(self, session: Session, sender: Sender) -> None:
+        self.session: Session = session
+        self.sender: Sender = sender
 
-    def send_emails(self, sender, subject, body):
+    def send_emails(self, sender: str, subject: str, body: str) -> None:
         for user in self.session.list_it():
             self.sender.send(
                 sender,

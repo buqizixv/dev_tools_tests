@@ -1,31 +1,36 @@
+from __future__ import annotations
+
 from time import sleep
+
+from libtestingtools.spam.models import User
 
 
 class Session:
-    counter = 0
-    users = []
+    def __init__(self) -> None:
+        self.counter: int = 0
+        self.users: list[User] = []
 
-    def save_user(self, user):
-        Session.counter += 1
-        user.id = Session.counter
+    def save_user(self, user: User) -> None:
+        self.counter += 1
+        user.id = self.counter
         self.users.append(user)
 
-    def list_it(self):
+    def list_it(self) -> list[User]:
         return self.users
 
-    def roll_back(self):
+    def roll_back(self) -> None:
         self.users.clear()
 
-    def close(self):
+    def close(self) -> None:
         pass
 
 
 class Connection:
-    def __init__(self):
+    def __init__(self) -> None:
         sleep(1)
 
-    def generate_session(self):
+    def generate_session(self) -> Session:
         return Session()
 
-    def close(self):
+    def close(self) -> None:
         pass

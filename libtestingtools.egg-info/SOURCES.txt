@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+libtestingtools/__init__.py
+libtestingtools/api_github.py
+libtestingtools/py.typed
+libtestingtools.egg-info/PKG-INFO
+libtestingtools.egg-info/SOURCES.txt
+libtestingtools.egg-info/dependency_links.txt
+libtestingtools.egg-info/requires.txt
+libtestingtools.egg-info/top_level.txt
+libtestingtools/spam/__init__.py
+libtestingtools/spam/db.py
+libtestingtools/spam/email_sender.py
+libtestingtools/spam/main.py
+libtestingtools/spam/models.py
